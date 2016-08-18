@@ -7,11 +7,12 @@ public class HexByteConverter {
         return String.format("%02X", bValue);
     }
 
-    public static byte convertFromHex(String hexByte) {
+    public static byte convertFromHex(String hexByte) throws IncorrectInputCodeException {
         if (HexValidator.isValid(hexByte)) {
             return (byte) ((Character.digit(hexByte.charAt(0), 16) << 4)
                     + Character.digit(hexByte.charAt(1), 16));
+        } else {
+            throw new IncorrectInputCodeException("Not valid representation of byte");
         }
-        return -1;
     }
 }
