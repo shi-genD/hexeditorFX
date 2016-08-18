@@ -2,12 +2,16 @@ package editor;/**
  * Created by shi on 17.08.16.
  */
 
+import editor.view.ConverterOverviewController;
 import editor.view.EditorOverviewController;
+import editor.view.FileActionWindowController;
+import editor.view.MainOverviewController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,7 +28,8 @@ public class MainApp extends Application {
 
         initRootLayout();
 
-        showEditorOverview();
+        //showEditorOverview();
+        showMainOverview();
 
     }
 
@@ -42,16 +47,85 @@ public class MainApp extends Application {
         }
     }
 
+    public void showConverterOverview() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/ConverterOverview.fxml"));
+            AnchorPane converterOverview = (AnchorPane) loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Converter");
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(primaryStage);
+            Scene scene = new Scene(converterOverview);
+            stage.setScene(scene);
+
+            ConverterOverviewController controller = loader.getController();
+            controller.setDialogStage(stage);
+
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void showEditorOverview() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/EditorOverview.fxml"));
-            AnchorPane personOverview = (AnchorPane) loader.load();
+            AnchorPane editorOverview = (AnchorPane) loader.load();
 
-            rootLayout.setCenter((personOverview));
+            Stage stage = new Stage();
+            stage.setTitle("Editor");
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(primaryStage);
+            Scene scene = new Scene(editorOverview);
+            stage.setScene(scene);
 
             EditorOverviewController controller = loader.getController();
+            controller.setDialogStage(stage);
+
+            stage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showMainOverview() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/MainOverview.fxml"));
+            AnchorPane mainOverview = (AnchorPane) loader.load();
+
+            rootLayout.setCenter((mainOverview));
+
+            MainOverviewController controller = loader.getController();
             controller.setMainApp(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void showFileActionWindow() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/FileActionWindow.fxml"));
+            AnchorPane fileActionWindow = (AnchorPane) loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Editor");
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(primaryStage);
+            Scene scene = new Scene(fileActionWindow);
+            stage.setScene(scene);
+
+            FileActionWindowController controller = loader.getController();
+            controller.setDialogStage(stage);
+
+            stage.showAndWait();
 
         } catch (IOException e) {
             e.printStackTrace();

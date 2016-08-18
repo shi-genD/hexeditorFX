@@ -1,70 +1,84 @@
 package editor.view;
 
-import editor.MainApp;
 import editor.util.HexByteConverter;
 import editor.util.IncorrectInputCodeException;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextArea;
-import java.awt.*;
-
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 /**
- * Created by shi on 17.08.16.
+ * Created by shi on 18.08.16.
  */
 public class EditorOverviewController {
 
     @FXML
-    private TextArea inputTextField;
+    private TextField outputTextField;
 
     @FXML
-    private TextArea outputTextField;
+    private Button newBtn;
 
     @FXML
-    private RadioButton strToHex;
+    private Button openBtn;
 
     @FXML
-    private RadioButton hexToStr;
+    private Button saveBtn;
 
+    @FXML
+    private Button closeBtn;
 
-    private MainApp mainApp;
-
-
+    private Stage stage;
+    private String filePath;
 
     @FXML
     private void initialize() {
-        inputTextField.textProperty().addListener((observable, oldValue, newValue) -> {
-            if (strToHex.isSelected()) {
-                StringBuffer buf = new StringBuffer();
-                for (int i = 0; i < newValue.length(); i++) {
-                    buf.append(HexByteConverter.convertToHex((byte) newValue.charAt(i)));
-                }
-                outputTextField.setText(buf.toString());
-            } else {
-                StringBuffer buf = new StringBuffer();
-                if (newValue.length()%2==0) {
-                    try {
-                        for (int i = 0; i < newValue.length(); i += 2) {
-                            buf.append((char)HexByteConverter.convertFromHex(newValue.substring(i, i + 2)));
-                        }
-                        outputTextField.setText(buf.toString());
-                    } catch (IncorrectInputCodeException e) {
-                        outputTextField.setText(e.getMessage());
-                    }
 
-                }
-            }
-        });
     }
 
-    public void radioSelect(ActionEvent event) {
-        inputTextField.deleteText(0, inputTextField.getText().length());
+    @FXML
+    public void handleNew() {
+        outputTextField.deleteText(0, outputTextField.getText().length());
+        File f = new File(filePath);
+    }
+
+    @FXML
+    public void handleOpen() {
+        try (FileInputStream fr = new FileInputStream(filePath)) {
+            outputTextField.deleteText(0, outputTextField.getText().length());
+            int c;
+            StringBuffer buf = new StringBuffer();
+            while ((c = fr.read()) != -1) {
+                buf.append(HexByteConverter.convertToHex((byte) c));
+            }
+            outputTextField.setText(buf.toString());
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    public void handleSave() {
+        try (FileOutputStream fr = new FileOutputStream(filePath)) {
+            for (int i = 0; i<outputTextField.getText().length(); i+=2) {
+                fr.write(HexByteConverter.convertFromHex(outputTextField.getText().substring(i, i+2)));
+            }
+
+        } catch (IOException | IncorrectInputCodeException e) {
+            System.out.println(e.getMessage());
+        }
+
+    }
+
+    @FXML
+    public void handleClose() {
         outputTextField.deleteText(0, outputTextField.getText().length());
     }
 
-    public void setMainApp(MainApp mainApp) {
-        this.mainApp = mainApp;
+
+    public void setDialogStage(Stage stage) {
+        this.stage = stage;
     }
-
-
 }
