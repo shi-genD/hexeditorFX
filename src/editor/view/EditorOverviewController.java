@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -44,12 +43,13 @@ public class EditorOverviewController {
     public void handleNew() {
 
         outputTextField.deleteText(0, outputTextField.getText().length());
-        mainApp.showFileActionWindow(stage);
+        filePath = new String(mainApp.showFileActionWindow(stage, ""));
         //File f = new File(filePath);
     }
 
     @FXML
     public void handleOpen() {
+        filePath = new String(mainApp.showFileActionWindow(stage, ""));
         try (FileInputStream fr = new FileInputStream(filePath)) {
             outputTextField.deleteText(0, outputTextField.getText().length());
             int c;
@@ -59,26 +59,37 @@ public class EditorOverviewController {
             }
             outputTextField.setText(buf.toString());
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            mainApp.showErrorWindow(stage, e.getMessage());
         }
     }
 
     @FXML
     public void handleSave() {
-        try (FileOutputStream fr = new FileOutputStream(filePath)) {
-            for (int i = 0; i<outputTextField.getText().length(); i+=2) {
-                fr.write(HexByteConverter.convertFromHex(outputTextField.getText().substring(i, i+2)));
+        int l;
+        if ((l=outputTextField.getText().length()%2)!=0)
+            mainApp.showErrorWindow(stage, "Not valid representation of byte");
+        else {
+            try {
+                byte[] buf = new byte[l / 2];
+                for (int i = 0, j = 0; i < l; i += 2, j++) {
+                    buf[j] = HexByteConverter.convertFromHex(outputTextField.getText().substring(i, i + 2));
+                }
+                filePath = new String(mainApp.showFileActionWindow(stage, filePath));
+                try (FileOutputStream fr = new FileOutputStream(filePath)) {
+                    fr.write(buf);
+                }
+
+            } catch (IncorrectInputCodeException e1) {
+                mainApp.showErrorWindow(stage, e1.getMessage());
+            } catch (IOException e) {
+                mainApp.showErrorWindow(stage, e.getMessage());
             }
-
-        } catch (IOException | IncorrectInputCodeException e) {
-            System.out.println(e.getMessage());
         }
-
     }
 
     @FXML
     public void handleClose() {
-        outputTextField.deleteText(0, outputTextField.getText().length());
+        stage.close();
     }
 
 

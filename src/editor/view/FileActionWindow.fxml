@@ -4,11 +4,10 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="editor.view.FileActionWindowController">
    <children>
-      <TextField layoutX="21.0" layoutY="37.0" prefHeight="25.0" prefWidth="268.0" />
-      <Button fx:id="okBtn" layoutX="65.0" layoutY="100.0" mnemonicParsing="false" prefWidth="65.0" text="OK" />
-      <Button fx:id="canselBtn" layoutX="174.0" layoutY="100.0" mnemonicParsing="false" prefWidth="65.0" text="Cancel" />
+      <TextField fx:id="textField" layoutX="21.0" layoutY="37.0" prefHeight="25.0" prefWidth="268.0" />
+      <Button fx:id="okBtn" layoutX="65.0" layoutY="100.0" mnemonicParsing="false" onAction="#handleOk" prefWidth="65.0" text="OK" />
+      <Button fx:id="cancelBtn" layoutX="174.0" layoutY="100.0" mnemonicParsing="false" onAction="#handleCancel" prefWidth="65.0" text="Cancel" />
    </children>
 </AnchorPane>

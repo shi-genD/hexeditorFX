@@ -2,10 +2,7 @@ package editor;/**
  * Created by shi on 17.08.16.
  */
 
-import editor.view.ConverterOverviewController;
-import editor.view.EditorOverviewController;
-import editor.view.FileActionWindowController;
-import editor.view.MainOverviewController;
+import editor.view.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -108,7 +105,7 @@ public class MainApp extends Application {
         }
     }
 
-    public void showFileActionWindow(Stage ownerStage) {
+    public String showFileActionWindow(Stage ownerStage, String fileName) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/FileActionWindow.fxml"));
@@ -122,7 +119,32 @@ public class MainApp extends Application {
             stage.setScene(scene);
 
             FileActionWindowController controller = loader.getController();
-            controller.setDialogStage(stage);
+            controller.setDialogStage(stage, fileName);
+
+            stage.showAndWait();
+            return controller.getFileName();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    public void showErrorWindow(Stage ownerStage, String errorText) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("view/ErrorWindow.fxml"));
+            AnchorPane errorWindow = (AnchorPane) loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Warning!");
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.initOwner(ownerStage);
+            Scene scene = new Scene(errorWindow);
+            stage.setScene(scene);
+
+            ErrorWindowController controller = loader.getController();
+            controller.setDialogStage(stage, errorText);
 
             stage.showAndWait();
 
