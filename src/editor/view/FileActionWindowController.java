@@ -1,5 +1,6 @@
 package editor.view;
 
+import editor.model.FileName;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -19,12 +20,12 @@ public class FileActionWindowController {
     @FXML
     private TextField textField;
 
-    private String fileName;
     private Stage stage;
     private boolean okClicked = false;
+    private FileName fileName;
 
     @FXML public void handleOk() {
-        fileName = new String(textField.getText());
+        fileName.setFileName(new String(textField.getText()));
         okClicked = true;
         stage.close();
     }
@@ -35,14 +36,12 @@ public class FileActionWindowController {
 
     @FXML
     private void initialize() {
-        textField.setText(fileName);
     }
 
     public boolean isOkClicked() {return okClicked;}
-    public String getFileName() {return fileName;}
 
 
-    public void setDialogStage(Stage stage, String fileName) {
+    public void setDialogStage(Stage stage, FileName fileName) {
         this.stage = stage;
         this.fileName = fileName;
     }

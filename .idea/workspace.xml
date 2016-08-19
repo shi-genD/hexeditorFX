@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="299d4ed9-f6ea-49d9-8b1e-d037bff05b08" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/editor/view/ConverterOverview.fxml" afterPath="$PROJECT_DIR$/src/editor/view/ConverterOverview.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/editor/view/EditorOverview.fxml" afterPath="$PROJECT_DIR$/src/editor/view/EditorOverview.fxml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/editor/model/TextIn.java" afterPath="$PROJECT_DIR$/src/editor/model/FileName.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/editor/MainApp.java" afterPath="$PROJECT_DIR$/src/editor/MainApp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/editor/view/EditorOverviewController.java" afterPath="$PROJECT_DIR$/src/editor/view/EditorOverviewController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/editor/view/FileActionWindowController.java" afterPath="$PROJECT_DIR$/src/editor/view/FileActionWindowController.java" />
     </list>
     <ignored path="hexeditorFX.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,11 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainApp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainApp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/editor/MainApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="143" column="34" selection-start-line="143" selection-start-column="34" selection-end-line="143" selection-end-column="34" />
+            <state relative-caret-position="391">
+              <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,24 +43,22 @@
       <file leaf-file-name="FileActionWindowController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/editor/view/FileActionWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+            <state relative-caret-position="69">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#628#629#0" expanded="true" />
-                <element signature="e#657#658#0" expanded="true" />
+                <element signature="e#671#672#0" expanded="true" />
                 <element signature="e#700#701#0" expanded="true" />
-                <element signature="e#743#744#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EditorOverviewController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EditorOverviewController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/editor/view/EditorOverviewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="370">
+              <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -68,7 +69,7 @@
       <file leaf-file-name="ErrorWindowController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/editor/view/ErrorWindowController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="414">
               <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -82,7 +83,7 @@
       <file leaf-file-name="ConverterOverviewController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/editor/view/ConverterOverviewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
+            <state relative-caret-position="1311">
               <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -91,11 +92,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TextIn.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/editor/model/TextIn.java">
+      <file leaf-file-name="FileName.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/editor/model/FileName.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="230">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,8 +105,8 @@
       <file leaf-file-name="MainOverviewController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/editor/view/MainOverviewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state relative-caret-position="414">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,10 +139,11 @@
         <option value="$PROJECT_DIR$/src/editor/view/MainOverview.fxml" />
         <option value="$PROJECT_DIR$/src/editor/view/MainOverviewController.java" />
         <option value="$PROJECT_DIR$/src/editor/view/ConverterOverviewController.java" />
-        <option value="$PROJECT_DIR$/src/editor/view/FileActionWindowController.java" />
         <option value="$PROJECT_DIR$/src/editor/view/ErrorWindow.fxml" />
-        <option value="$PROJECT_DIR$/src/editor/MainApp.java" />
         <option value="$PROJECT_DIR$/src/editor/view/ErrorWindowController.java" />
+        <option value="$PROJECT_DIR$/src/editor/model/FileName.java" />
+        <option value="$PROJECT_DIR$/src/editor/MainApp.java" />
+        <option value="$PROJECT_DIR$/src/editor/view/FileActionWindowController.java" />
         <option value="$PROJECT_DIR$/src/editor/view/EditorOverviewController.java" />
       </list>
     </option>
@@ -634,10 +636,8 @@
           <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
             <element signature="e#700#701#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -711,34 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/editor/model/TextIn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/editor/view/ConverterOverviewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/editor/view/MainOverviewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/editor/view/ErrorWindow.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -750,35 +722,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/editor/MainApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="143" column="34" selection-start-line="143" selection-start-column="34" selection-end-line="143" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/editor/util/HexValidator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/editor/view/FileActionWindowController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#700#701#0" expanded="true" />
-            <element signature="e#743#744#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -798,9 +746,49 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/editor/view/ConverterOverviewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1311">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/editor/view/MainOverviewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/editor/model/FileName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/editor/view/FileActionWindowController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#700#701#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/editor/view/ErrorWindowController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
+        <state relative-caret-position="414">
           <caret line="18" column="9" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -812,8 +800,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/editor/view/EditorOverviewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state relative-caret-position="370">
+          <caret line="82" column="32" selection-start-line="82" selection-start-column="32" selection-end-line="82" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/editor/MainApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="120" column="0" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

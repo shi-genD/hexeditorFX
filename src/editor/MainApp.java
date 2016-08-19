@@ -2,6 +2,7 @@ package editor;/**
  * Created by shi on 17.08.16.
  */
 
+import editor.model.FileName;
 import editor.view.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -105,7 +106,7 @@ public class MainApp extends Application {
         }
     }
 
-    public String showFileActionWindow(Stage ownerStage, String fileName) {
+    public boolean showFileActionWindow(Stage ownerStage, FileName fileName) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/FileActionWindow.fxml"));
@@ -122,11 +123,11 @@ public class MainApp extends Application {
             controller.setDialogStage(stage, fileName);
 
             stage.showAndWait();
-            return controller.getFileName();
+            return controller.isOkClicked();
 
         } catch (IOException e) {
             e.printStackTrace();
-            return "";
+            return false;
         }
     }
 
