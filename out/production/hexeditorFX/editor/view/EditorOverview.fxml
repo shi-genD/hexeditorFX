@@ -8,12 +8,12 @@
    <children>
       <HBox layoutX="109.0" layoutY="249.0" spacing="20.0">
          <children>
-            <Button fx:id="newBtn" layoutX="49.0" layoutY="247.0" mnemonicParsing="false" prefWidth="80.0" text="New..." />
-            <Button fx:id="openBtn" layoutX="148.0" layoutY="247.0" mnemonicParsing="false" prefWidth="80.0" text="Open..." />
-            <Button fx:id="saveBtn" layoutX="238.0" layoutY="247.0" mnemonicParsing="false" prefWidth="80.0" text="Save as" />
-            <Button fx:id="closeBtn" layoutX="328.0" layoutY="247.0" mnemonicParsing="false" prefWidth="80.0" text="Close" />
+            <Button fx:id="newBtn" layoutX="49.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleNew" prefWidth="80.0" text="New..." />
+            <Button fx:id="openBtn" layoutX="148.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleOpen" prefWidth="80.0" text="Open..." />
+            <Button fx:id="saveBtn" layoutX="238.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleSave" prefWidth="80.0" text="Save as" />
+            <Button fx:id="closeBtn" layoutX="328.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleClose" prefWidth="80.0" text="Close" />
          </children>
       </HBox>
-      <TextArea fx:id="outputField" layoutX="42.0" layoutY="26.0" prefHeight="200.0" prefWidth="514.0" />
+      <TextArea fx:id="outputTextField" layoutX="42.0" layoutY="26.0" prefHeight="200.0" prefWidth="514.0" />
    </children>
 </AnchorPane>

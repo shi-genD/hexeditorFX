@@ -29,7 +29,7 @@ public class FileActionWindowController {
 
     }
 
-
+    @FXML
     private void initialize() {
 
     }

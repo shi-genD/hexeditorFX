@@ -1,10 +1,11 @@
 package editor.view;
 
+import editor.MainApp;
 import editor.util.HexByteConverter;
 import editor.util.IncorrectInputCodeException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,7 +17,7 @@ import java.io.IOException;
 public class EditorOverviewController {
 
     @FXML
-    private TextField outputTextField;
+    private TextArea outputTextField;
 
     @FXML
     private Button newBtn;
@@ -30,6 +31,7 @@ public class EditorOverviewController {
     @FXML
     private Button closeBtn;
 
+    private MainApp mainApp;
     private Stage stage;
     private String filePath;
 
@@ -40,8 +42,10 @@ public class EditorOverviewController {
 
     @FXML
     public void handleNew() {
+
         outputTextField.deleteText(0, outputTextField.getText().length());
-        File f = new File(filePath);
+        mainApp.showFileActionWindow(stage);
+        //File f = new File(filePath);
     }
 
     @FXML
@@ -78,7 +82,8 @@ public class EditorOverviewController {
     }
 
 
-    public void setDialogStage(Stage stage) {
+    public void setDialogStage(Stage stage, MainApp mainApp) {
         this.stage = stage;
+        this.mainApp = mainApp;
     }
 }

@@ -28,7 +28,6 @@ public class MainApp extends Application {
 
         initRootLayout();
 
-        //showEditorOverview();
         showMainOverview();
 
     }
@@ -84,7 +83,7 @@ public class MainApp extends Application {
             stage.setScene(scene);
 
             EditorOverviewController controller = loader.getController();
-            controller.setDialogStage(stage);
+            controller.setDialogStage(stage, this);
 
             stage.showAndWait();
 
@@ -109,7 +108,7 @@ public class MainApp extends Application {
         }
     }
 
-    public void showFileActionWindow() {
+    public void showFileActionWindow(Stage ownerStage) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("view/FileActionWindow.fxml"));
@@ -118,7 +117,7 @@ public class MainApp extends Application {
             Stage stage = new Stage();
             stage.setTitle("Editor");
             stage.initModality(Modality.WINDOW_MODAL);
-            stage.initOwner(primaryStage);
+            stage.initOwner(ownerStage);
             Scene scene = new Scene(fileActionWindow);
             stage.setScene(scene);
 
