@@ -44,5 +44,6 @@ public class FileActionWindowController {
     public void setDialogStage(Stage stage, FileName fileName) {
         this.stage = stage;
         this.fileName = fileName;
+        textField.setText(fileName.getFileName());
     }
 }
