@@ -6,7 +6,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="editor.view.ErrorWindowController">
    <children>
-      <Button fx:id="okBtn" layoutX="119.0" layoutY="88.0" mnemonicParsing="false" onAction="#handleOk" prefWidth="60.0" text="OK" />
+      <Button fx:id="okBtn" defaultButton="true" layoutX="119.0" layoutY="88.0" mnemonicParsing="false" onAction="#handleOk" prefWidth="60.0" text="OK" />
       <Label fx:id="errorMessage" layoutX="16.0" layoutY="30.0" prefHeight="45.0" prefWidth="268.0" />
    </children>
 </AnchorPane>
