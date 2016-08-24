@@ -4,33 +4,33 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="editor.view.ConverterOverviewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="editor.view.ConverterOverviewController">
    <children>
       <SplitPane dividerPositions="0.5" layoutX="184.0" layoutY="70.0" prefHeight="300.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="background">
                <children>
-                  <Label layoutX="48.0" layoutY="14.0" text="Insert text " />
-                  <TextArea fx:id="inputTextField" layoutX="48.0" layoutY="49.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
-                  <RadioButton fx:id="strToHex" layoutX="33.0" layoutY="339.0" mnemonicParsing="false" onAction="#radioSelect" selected="true" text="StringToHex">
+                  <Label layoutX="48.0" layoutY="14.0" styleClass="label-half-header" text="Insert text here" />
+                  <TextArea fx:id="inputTextField" layoutX="27.0" layoutY="49.0" prefHeight="269.0" prefWidth="244.0" wrapText="true" />
+                  <RadioButton fx:id="strToHex" layoutX="22.0" layoutY="339.0" mnemonicParsing="false" onAction="#radioSelect" selected="true" styleClass="label-bright" text="StringToHex">
                      <toggleGroup>
                         <ToggleGroup fx:id="inputFormat" />
                      </toggleGroup></RadioButton>
-                  <RadioButton fx:id="hexToStr" layoutX="158.0" layoutY="339.0" mnemonicParsing="false" onAction="#radioSelect" text="HexToString" toggleGroup="$inputFormat" />
+                  <RadioButton fx:id="hexToStr" layoutX="158.0" layoutY="339.0" mnemonicParsing="false" onAction="#radioSelect" styleClass="label-bright" stylesheets="@DarkTheme.css" text="HexToString" toggleGroup="$inputFormat" />
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="background">
                <children>
-                  <Label layoutX="48.0" layoutY="14.0" text="Output text" />
-                  <TextArea fx:id="outputTextField" layoutX="48.0" layoutY="49.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
-                  <RadioButton fx:id="utf8Encoding" disable="true" layoutX="55.0" layoutY="317.0" mnemonicParsing="false" selected="true" text="UTF-8">
+                  <Label layoutX="48.0" layoutY="14.0" prefHeight="25.0" prefWidth="87.0" styleClass="label-half-header" text="Result" />
+                  <TextArea fx:id="outputTextField" layoutX="26.0" layoutY="49.0" prefHeight="255.0" prefWidth="244.0" wrapText="true" />
+                  <RadioButton fx:id="utf8Encoding" disable="true" layoutX="42.0" layoutY="317.0" mnemonicParsing="false" selected="true" text="UTF-8">
                      <toggleGroup>
                         <ToggleGroup fx:id="encoding" />
                      </toggleGroup>
                   </RadioButton>
-                  <RadioButton fx:id="win1251Encoding" disable="true" layoutX="55.0" layoutY="342.0" mnemonicParsing="false" text="Win-1251" toggleGroup="$encoding" />
-                  <RadioButton fx:id="ansiEncoding" disable="true" layoutX="188.0" layoutY="345.0" mnemonicParsing="false" text="ANSI" toggleGroup="$encoding" />
-                  <RadioButton fx:id="utf16Encoding" disable="true" layoutX="188.0" layoutY="320.0" mnemonicParsing="false" text="UTF-16" toggleGroup="$encoding" />
+                  <RadioButton fx:id="win1251Encoding" disable="true" layoutX="42.0" layoutY="355.0" mnemonicParsing="false" text="Win-1251" toggleGroup="$encoding" />
+                  <RadioButton fx:id="ansiEncoding" disable="true" layoutX="175.0" layoutY="355.0" mnemonicParsing="false" text="ANSI" toggleGroup="$encoding" />
+                  <RadioButton fx:id="utf16Encoding" disable="true" layoutX="175.0" layoutY="320.0" mnemonicParsing="false" text="UTF-16" toggleGroup="$encoding" />
                </children>
             </AnchorPane>
         </items>

@@ -89,14 +89,14 @@ public class ConverterOverviewController {
         });
     }
 
-    private void hexToString(String string, String encoing) {
+    private void hexToString(String string, String encoding) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         if (string.length()%2==0) {
             try {
                 for (int i = 0; i < string.length(); i += 2) {
                     baos.write(HexByteConverter.convertFromHex(string.substring(i, i + 2)));
                 }
-                outputTextField.setText(baos.toString(encoing));
+                outputTextField.setText(baos.toString(encoding));
             } catch (IncorrectInputCodeException | UnsupportedEncodingException e) {
                 outputTextField.setText(e.getMessage());
             }

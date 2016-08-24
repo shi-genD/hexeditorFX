@@ -4,16 +4,16 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="editor.view.EditorOverviewController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="editor.view.EditorOverviewController">
    <children>
-      <HBox layoutX="109.0" layoutY="249.0" spacing="20.0">
+      <HBox layoutX="50.0" layoutY="253.0" spacing="20.0">
          <children>
-            <Button fx:id="newBtn" layoutX="49.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleNew" prefWidth="80.0" text="New..." />
-            <Button fx:id="openBtn" layoutX="148.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleOpen" prefWidth="80.0" text="Open..." />
-            <Button fx:id="saveBtn" layoutX="238.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleSave" prefWidth="80.0" text="Save as" />
-            <Button fx:id="closeBtn" layoutX="328.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleClose" prefWidth="80.0" text="Close" />
+            <Button fx:id="newBtn" layoutX="49.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleNew" prefWidth="110.0" text="New..." />
+            <Button fx:id="openBtn" layoutX="148.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleOpen" prefWidth="110.0" text="Open..." />
+            <Button fx:id="saveBtn" layoutX="238.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleSave" prefWidth="110.0" text="Save as" />
+            <Button fx:id="closeBtn" layoutX="328.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleClose" prefWidth="110.0" text="Close" />
          </children>
       </HBox>
-      <TextArea fx:id="outputTextField" layoutX="42.0" layoutY="26.0" prefHeight="200.0" prefWidth="514.0" wrapText="true" />
+      <TextArea fx:id="outputTextField" layoutX="43.0" layoutY="22.0" prefHeight="200.0" prefWidth="514.0" wrapText="true" />
    </children>
 </AnchorPane>

@@ -43,7 +43,7 @@ public class EditorOverviewController {
     @FXML
     public void handleNew() {
 
-        outputTextField.deleteText(0, outputTextField.getText().length());
+        outputTextField.setText("");
         fileName = new FileName("");
     }
 
@@ -53,7 +53,7 @@ public class EditorOverviewController {
         boolean okClicked = mainApp.showFileActionWindow(stage, fileName);
         if (okClicked) {
             try (FileInputStream fr = new FileInputStream(fileName.getFileName())) {
-                outputTextField.deleteText(0, outputTextField.getText().length());
+                outputTextField.setText("");
                 int c;
                 StringBuffer buf = new StringBuffer();
                 while ((c = fr.read()) != -1) {
@@ -68,12 +68,13 @@ public class EditorOverviewController {
 
     @FXML
     public void handleSave() {
-        if (outputTextField.getText().length()%2!=0)
+        int len = outputTextField.getText().length();
+        if (len % 2!=0)
             mainApp.showErrorWindow(stage, "Not valid representation of byte");
         else {
             try {
-                    byte[] buf = new byte[outputTextField.getText().length() / 2];
-                    for (int i = 0, j = 0; i < outputTextField.getText().length(); i += 2, j++) {
+                    byte[] buf = new byte[len / 2];
+                    for (int i = 0, j = 0; i < len; i += 2, j++) {
                         buf[j] = HexByteConverter.convertFromHex(outputTextField.getText().substring(i, i + 2));
                     }
                     boolean okClicked = mainApp.showFileActionWindow(stage, fileName);
